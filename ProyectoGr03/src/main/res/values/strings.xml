@@ -6,4 +6,7 @@
     <string name="login_register">Registrarse</string>
     <string name="login_enter_button">INGRESAR</string>
     <string name="logo_desc">Logo</string>
+    <string name="clienteButton">Soy una persona</string>
+    <string name="restaurantButton">Soy un restaurante</string>
+    <string name="userTypeText">¿Qué tipo de usuario eres?</string>
 </resources>

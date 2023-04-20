@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 
 class LoginFragment : Fragment() {
@@ -30,8 +31,13 @@ class LoginFragment : Fragment() {
         val enterButton = view.findViewById<Button>(R.id.enterButton)
 
         enterButton.setOnClickListener{
-            findNavController().navigate(R.id.action_loginFragment_to_tipoUsuarioFragment)
+            //TODO: Ir al fragment del home
         }
 
+        val registerText= view.findViewById<TextView>(R.id.registerTextView)
+
+        registerText.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_tipoUsuarioFragment)
+        }
     }
 }
