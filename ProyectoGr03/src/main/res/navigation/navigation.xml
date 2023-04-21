@@ -18,5 +18,14 @@
         android:id="@+id/tipoUsuarioFragment"
         android:name="co.edu.udea.proyecto20231_gr03.TipoUsuarioFragment"
         android:label="fragment_tipo_usuario"
-        tools:layout="@layout/fragment_tipo_usuario" />
+        tools:layout="@layout/fragment_tipo_usuario" >
+        <action
+            android:id="@+id/action_tipoUsuarioFragment_to_restaurantDataFragment"
+            app:destination="@id/restaurantDataFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantDataFragment"
+        android:name="co.edu.udea.proyecto20231_gr03.RestaurantDataFragment"
+        android:label="fragment_restaurant_data"
+        tools:layout="@layout/fragment_restaurant_data" />
 </navigation>

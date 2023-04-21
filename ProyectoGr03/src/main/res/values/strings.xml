@@ -6,7 +6,15 @@
     <string name="login_register">Registrarse</string>
     <string name="login_enter_button">INGRESAR</string>
     <string name="logo_desc">Logo</string>
-    <string name="clienteButton">Soy una persona</string>
+    <string name="clientButton">Soy una persona</string>
     <string name="restaurantButton">Soy un restaurante</string>
     <string name="userTypeText">¿Qué tipo de usuario eres?</string>
+    <string name="restaurant_register">Registro Restaurante</string>
+    <string name="restaurantName">Nombre</string>
+    <string name="restaurantType">Tipo</string>
+    <string name="restaurantAddress">Dirección</string>
+    <string name="restaurantPhone">Teléfono</string>
+    <string name="ownerName">Nombre Representante</string>
+    <string name="ownerPhone">Teléfono Representante</string>
+    <string name="next">Siguiente</string>
 </resources>

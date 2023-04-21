@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RestaurantDataFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/default_margin"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            android:text="@string/restaurant_register"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/restaurantNameText"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="name"
+            android:hint="@string/restaurantName"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+        <EditText
+            android:id="@+id/restaurantTypeText"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints=""
+            android:hint="@string/restaurantType"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/restaurantNameText" />
+
+        <EditText
+            android:id="@+id/restaurantAddressText"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="postalAddress"
+            android:hint="@string/restaurantAddress"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/restaurantTypeText" />
+
+        <EditText
+            android:id="@+id/restaurantPhoneText"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="phone"
+            android:hint="@string/restaurantPhone"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/restaurantAddressText" />
+
+        <EditText
+            android:id="@+id/ownerNameText"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="name"
+            android:hint="@string/ownerName"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/restaurantPhoneText" />
+
+        <EditText
+            android:id="@+id/ownerPhoneText"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="phone"
+            android:hint="@string/ownerPhone"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ownerNameText" />
+
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            android:layout_margin="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ownerPhoneText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+
