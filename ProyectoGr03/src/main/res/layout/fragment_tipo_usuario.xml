@@ -30,14 +30,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/internal_margin"
-                android:text="@string/clientButton" />
+                android:text="@string/client_button" />
 
             <Button
                 android:id="@+id/restaurantButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/internal_margin"
-                android:text="@string/restaurantButton" />
+                android:text="@string/restaurant_button" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
-        android:text="@string/userTypeText"
+        android:text="@string/user_type"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toTopOf="@+id/cardButton"
         app:layout_constraintEnd_toEndOf="parent"
