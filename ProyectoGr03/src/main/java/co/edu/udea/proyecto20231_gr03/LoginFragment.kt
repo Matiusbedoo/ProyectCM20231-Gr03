@@ -1,21 +1,26 @@
 package co.edu.udea.proyecto20231_gr03
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 
 class LoginFragment : Fragment() {
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
+    private lateinit var etEmail: EditText
+    private lateinit var etPassword: EditText
+    private lateinit var loginButton: Button
+    private lateinit var auth: FirebaseAuth
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -28,16 +33,48 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val enterButton = view.findViewById<Button>(R.id.enterButton)
+        etEmail = view.findViewById(R.id.emailLogin)
+        etPassword = view.findViewById(R.id.passwordLogin)
 
-        enterButton.setOnClickListener{
-            //TODO: Ir al fragment del home
+        auth = FirebaseAuth.getInstance()
+
+        loginButton = view.findViewById(R.id.enterButton)
+
+        loginButton.setOnClickListener {
+            val email = etEmail.text.toString()
+            val password = etPassword.text.toString()
+
+            if (email.isNotEmpty() && password.isNotEmpty()) {
+                loginUser(view.context, email, password)
+            } else {
+                Toast.makeText(
+                    view.context,
+                    "Por favor, completa todos los campos",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
 
-        val registerText= view.findViewById<TextView>(R.id.registerTextView)
+        val registerText = view.findViewById<TextView>(R.id.registerTextView)
 
         registerText.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_tipoUsuarioFragment)
+        }
+
+    }
+
+    private fun loginUser(context: Context, email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+            if (it.isSuccessful) {
+                val user: FirebaseUser? = auth.currentUser
+                Toast.makeText(context, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(
+                    context,
+                    "Error en el inicio de sesión: ${it.exception?.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 }
