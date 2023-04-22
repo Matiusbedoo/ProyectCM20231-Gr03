@@ -33,6 +33,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setup(view)
+
+    }
+
+    private fun setup(view: View) {
         etEmail = view.findViewById(R.id.emailLogin)
         etPassword = view.findViewById(R.id.passwordLogin)
 
@@ -60,7 +65,6 @@ class LoginFragment : Fragment() {
         registerText.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_tipoUsuarioFragment)
         }
-
     }
 
     private fun loginUser(context: Context, email: String, password: String) {

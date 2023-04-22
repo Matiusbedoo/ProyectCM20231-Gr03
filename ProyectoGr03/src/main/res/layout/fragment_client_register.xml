@@ -87,7 +87,7 @@
             app:layout_constraintTop_toBottomOf="@id/mailClient" />
 
         <EditText
-            android:id="@+id/repeatPasswordClient"
+            android:id="@+id/confirmPasswordClient"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_margin="@dimen/internal_margin"
@@ -108,7 +108,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/repeatPasswordClient" />
+            app:layout_constraintTop_toBottomOf="@+id/confirmPasswordClient" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

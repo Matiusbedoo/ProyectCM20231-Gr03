@@ -32,6 +32,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/restaurantEmailRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/login_email_hint"
@@ -48,6 +49,7 @@
             app:layout_constraintTop_toBottomOf="@id/mailTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/restaurantPasswordRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/password_hint"
@@ -64,6 +66,7 @@
             app:layout_constraintTop_toBottomOf="@id/passwordTextInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/restaurantPasswordConfirmRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/repeat_password_hint"
@@ -71,7 +74,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/registerRestaurantButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/register"
