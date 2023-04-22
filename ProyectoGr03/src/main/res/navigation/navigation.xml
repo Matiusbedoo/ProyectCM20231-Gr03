@@ -22,10 +22,26 @@
         <action
             android:id="@+id/action_tipoUsuarioFragment_to_restaurantDataFragment"
             app:destination="@id/restaurantDataFragment" />
+        <action
+            android:id="@+id/action_tipoUsuarioFragment_to_clientRegisterFragment"
+            app:destination="@id/clientRegisterFragment" />
     </fragment>
     <fragment
         android:id="@+id/restaurantDataFragment"
         android:name="co.edu.udea.proyecto20231_gr03.RestaurantDataFragment"
         android:label="fragment_restaurant_data"
-        tools:layout="@layout/fragment_restaurant_data" />
+        tools:layout="@layout/fragment_restaurant_data" >
+        <action
+            android:id="@+id/action_restaurantDataFragment_to_restaurantRegisterFragment"
+            app:destination="@id/restaurantRegisterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/restaurantRegisterFragment"
+        android:name="co.edu.udea.proyecto20231_gr03.RestaurantRegisterFragment"
+        android:label="fragment_restaurant_register"
+        tools:layout="@layout/fragment_restaurant_register" />
+    <fragment
+        android:id="@+id/clientRegisterFragment"
+        android:name="co.edu.udea.proyecto20231_gr03.ClientRegisterFragment"
+        android:label="ClientRegisterFragment" />
 </navigation>
