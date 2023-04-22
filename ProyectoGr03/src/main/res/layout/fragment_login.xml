@@ -14,11 +14,12 @@
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/default_margin"
         android:contentDescription="@string/logo_desc"
+        android:src="@mipmap/central_restaurant1"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+ />
 
     <Button
         android:id="@+id/enterButton"

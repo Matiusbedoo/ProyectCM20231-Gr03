@@ -9,8 +9,6 @@
     <string name="clienteButton">Soy una persona</string>
     <string name="restaurantButton">Soy un restaurante</string>
     <string name="userTypeText">¿Qué tipo de usuario eres?</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="manageYour">Gestiona tus:</string>
     <string name="foods">Comidas</string>
     <string name="services">Servicios</string>
