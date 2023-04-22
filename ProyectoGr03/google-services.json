@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "608801912503",
+    "project_id": "centralrestaurant-b01d8",
+    "storage_bucket": "centralrestaurant-b01d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608801912503:android:e7c23aaeae52fb67bbbf32",
+        "android_client_info": {
+          "package_name": "co.edu.udea.proyecto20231_gr03"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608801912503-6781h216r7pgel9bflbrbql2i9l7h1fv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4FEZ4glxgo5g8T7y-lE64UjXJXbma--k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608801912503-6781h216r7pgel9bflbrbql2i9l7h1fv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

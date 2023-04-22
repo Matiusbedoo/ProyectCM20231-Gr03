@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RestaurantDataFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/default_margin"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/default_margin"
+            android:text="@string/client_register"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <EditText
+            android:id="@+id/clientName"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="name"
+            android:hint="@string/client_name"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleText" />
+
+        <EditText
+            android:id="@+id/cellphoneClient"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="phone"
+            android:hint="@string/cellphone"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/clientName" />
+
+        <EditText
+            android:id="@+id/birthDateClient"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="postalAddress"
+            android:hint="@string/birthdate"
+            android:inputType="date"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cellphoneClient" />
+
+        <EditText
+            android:id="@+id/mailClient"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="emailAddress"
+            android:hint="@string/email"
+            android:inputType="phone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/birthDateClient" />
+
+        <EditText
+            android:id="@+id/passwordClient"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="password"
+            android:hint="@string/password_hint"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/mailClient" />
+
+        <EditText
+            android:id="@+id/confirmPasswordClient"
+            style="@style/EditTextStyle"
+            android:layout_width="match_parent"
+            android:layout_margin="@dimen/internal_margin"
+            android:autofillHints="password"
+            android:hint="@string/repeat_password_hint"
+            android:inputType="textPassword"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/passwordClient" />
+
+
+        <Button
+            android:id="@+id/registerClientButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/register"
+            android:layout_margin="@dimen/default_margin"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/confirmPasswordClient" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

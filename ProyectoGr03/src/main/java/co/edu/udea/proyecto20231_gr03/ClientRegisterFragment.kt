@@ -1,7 +1,6 @@
 package co.edu.udea.proyecto20231_gr03
 
 import android.content.Context
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,48 +8,53 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 
-class LoginFragment : Fragment() {
+class ClientRegisterFragment : Fragment() {
 
     private lateinit var etEmail: EditText
     private lateinit var etPassword: EditText
-    private lateinit var loginButton: Button
+    private lateinit var etPasswordConfirm: EditText
+    private lateinit var registerButton: Button
+
     private lateinit var auth: FirebaseAuth
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        return inflater.inflate(R.layout.fragment_client_register, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setup(view)
-
     }
 
     private fun setup(view: View) {
-        etEmail = view.findViewById(R.id.emailLogin)
-        etPassword = view.findViewById(R.id.passwordLogin)
-
         auth = FirebaseAuth.getInstance()
+        etEmail = view.findViewById(R.id.restaurantEmailRegister)
+        etPassword = view.findViewById(R.id.restaurantPasswordRegister)
+        etPasswordConfirm = view.findViewById(R.id.restaurantPasswordConfirmRegister)
+        registerButton = view.findViewById(R.id.registerRestaurantButton)
 
-        loginButton = view.findViewById(R.id.enterButton)
-
-        loginButton.setOnClickListener {
+        registerButton.setOnClickListener {
             val email = etEmail.text.toString()
             val password = etPassword.text.toString()
+            var passwordConfirm = etPasswordConfirm.text.toString()
 
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                loginUser(view.context, email, password)
+            if (email.isNotEmpty() && password.isNotEmpty() && passwordConfirm.isNotEmpty()) {
+                if (password == passwordConfirm) {
+                    createUser(view.context, email, password)
+                } else {
+                    Toast.makeText(
+                        view.context,
+                        "Las contraseñas no coinciden",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
             } else {
                 Toast.makeText(
                     view.context,
@@ -59,22 +63,13 @@ class LoginFragment : Fragment() {
                 ).show()
             }
         }
-
-        val registerText = view.findViewById<TextView>(R.id.registerTextView)
-
-        registerText.setOnClickListener {
-            //Descomentar para mostrar navegación entre manejador de comidas y comentar el otro o viceversa
-            //findNavController().navigate(R.id.action_loginFragment_to_manageFood)
-            findNavController().navigate(R.id.action_loginFragment_to_tipoUsuarioFragment)
-        }
     }
 
-    private fun loginUser(context: Context, email: String, password: String) {
-        auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
+    private fun createUser(context: Context, email: String, password: String) {
+        auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener {
             if (it.isSuccessful) {
                 val user: FirebaseUser? = auth.currentUser
                 Toast.makeText(context, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
-                findNavController().navigate(R.id.action_loginFragment_to_homeClientFragment)
             } else {
                 Toast.makeText(
                     context,
@@ -84,4 +79,5 @@ class LoginFragment : Fragment() {
             }
         }
     }
+
 }

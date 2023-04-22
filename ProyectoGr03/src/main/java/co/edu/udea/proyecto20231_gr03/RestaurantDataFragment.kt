@@ -9,28 +9,25 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 
-class TipoUsuarioFragment : Fragment() {
+class RestaurantDataFragment : Fragment() {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_tipo_usuario, container, false)
+        return inflater.inflate(R.layout.fragment_restaurant_data, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val restaurantButton = view.findViewById<Button>(R.id.restaurantButton)
+        val nextButton = view.findViewById<Button>(R.id.nextRestaurantButton)
 
-        restaurantButton.setOnClickListener {
-            findNavController().navigate(R.id.action_tipoUsuarioFragment_to_restaurantDataFragment)
-        }
-        val clientButton = view.findViewById<Button>(R.id.clienteButton)
 
-        clientButton.setOnClickListener {
-            findNavController().navigate(R.id.action_tipoUsuarioFragment_to_clientRegisterFragment)
+        nextButton.setOnClickListener {
+            findNavController().navigate(R.id.action_restaurantDataFragment_to_restaurantRegisterFragment)
         }
     }
 }
