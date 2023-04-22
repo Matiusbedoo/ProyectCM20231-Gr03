@@ -44,4 +44,35 @@
         android:id="@+id/clientRegisterFragment"
         android:name="co.edu.udea.proyecto20231_gr03.ClientRegisterFragment"
         android:label="ClientRegisterFragment" />
+    <fragment
+        android:id="@+id/foods"
+        android:name="co.edu.udea.proyecto20231_gr03.foods"
+        android:label="fragment_foods"
+        tools:layout="@layout/fragment_foods" >
+        <action
+            android:id="@+id/action_foods_to_manage"
+            app:destination="@id/manage" />
+        <action
+            android:id="@+id/action_foods_to_newFood"
+            app:destination="@id/newFood" />
+    </fragment>
+    <fragment
+        android:id="@+id/manage"
+        android:name="co.edu.udea.proyecto20231_gr03.manage"
+        android:label="fragment_manage"
+        tools:layout="@layout/fragment_manage" />
+    <fragment
+        android:id="@+id/manageFood"
+        android:name="co.edu.udea.proyecto20231_gr03.manageFood"
+        android:label="fragment_manage_food"
+        tools:layout="@layout/fragment_manage_food" >
+        <action
+            android:id="@+id/action_manageFood_to_foods"
+            app:destination="@id/foods" />
+    </fragment>
+    <fragment
+        android:id="@+id/newFood"
+        android:name="co.edu.udea.proyecto20231_gr03.newFood"
+        android:label="fragment_new_food"
+        tools:layout="@layout/fragment_new_food" />
 </navigation>
