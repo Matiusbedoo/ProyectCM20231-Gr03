@@ -46,7 +46,7 @@
         android:label="ClientRegisterFragment" />
     <fragment
         android:id="@+id/foods"
-        android:name="co.edu.udea.proyecto20231_gr03.foods"
+        android:name="co.edu.udea.proyecto20231_gr03.FoodsFragment"
         android:label="fragment_foods"
         tools:layout="@layout/fragment_foods" >
         <action
@@ -58,12 +58,12 @@
     </fragment>
     <fragment
         android:id="@+id/manage"
-        android:name="co.edu.udea.proyecto20231_gr03.manage"
+        android:name="co.edu.udea.proyecto20231_gr03.ManageFragment"
         android:label="fragment_manage"
         tools:layout="@layout/fragment_manage" />
     <fragment
         android:id="@+id/manageFood"
-        android:name="co.edu.udea.proyecto20231_gr03.manageFood"
+        android:name="co.edu.udea.proyecto20231_gr03.ManageFoodFragment"
         android:label="fragment_manage_food"
         tools:layout="@layout/fragment_manage_food" >
         <action
@@ -72,7 +72,7 @@
     </fragment>
     <fragment
         android:id="@+id/newFood"
-        android:name="co.edu.udea.proyecto20231_gr03.newFood"
+        android:name="co.edu.udea.proyecto20231_gr03.NewFoodFragment"
         android:label="fragment_new_food"
         tools:layout="@layout/fragment_new_food" />
 </navigation>
