@@ -37,6 +37,8 @@ class LoginFragment : Fragment() {
         val registerText= view.findViewById<TextView>(R.id.registerTextView)
 
         registerText.setOnClickListener {
+            //Descomentar para mostrar navegación entre manejador de comidas y comentar el otro o viceversa
+            //findNavController().navigate(R.id.action_loginFragment_to_manageFood)
             findNavController().navigate(R.id.action_loginFragment_to_tipoUsuarioFragment)
         }
     }
