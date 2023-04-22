@@ -23,7 +23,7 @@
             app:layout_constraintVertical_bias="0.039">
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/near_rest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Restaurantes cercanos"
@@ -82,7 +82,7 @@
             app:layout_constraintVertical_bias="0.065">
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/mapText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mapa"
@@ -101,7 +101,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                app:layout_constraintTop_toBottomOf="@+id/mapText"
                 map:cameraZoom="10"
                 map:uiRotateGestures="true"
                 map:uiZoomControls="true" />
@@ -118,7 +118,7 @@
             app:layout_constraintVertical_bias="0.304">
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/reservationsButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -129,18 +129,18 @@
                 app:layout_constraintVertical_bias="0.488" />
 
             <Button
-                android:id="@+id/button2"
+                android:id="@+id/servicesButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
                 android:text="Servicios"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/button"
+                app:layout_constraintStart_toEndOf="@+id/reservationsButton"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.511" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/profButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
@@ -148,7 +148,7 @@
                 android:text="Perfil"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/button2"
+                app:layout_constraintStart_toEndOf="@+id/servicesButton"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.511" />
         </androidx.constraintlayout.widget.ConstraintLayout>

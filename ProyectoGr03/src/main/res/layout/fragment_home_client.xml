@@ -20,6 +20,7 @@
             android:id="@+id/welcome_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textStyle="bold"
             android:text="HOLA DE NUEVO, JULIANA"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -40,9 +41,10 @@
             app:layout_constraintVertical_bias="0.22">
 
             <TextView
-                android:id="@+id/textView4"
+                android:id="@+id/next_reservations"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="Próximas reservas"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -91,9 +93,10 @@
             app:layout_constraintVertical_bias="0.145">
 
             <TextView
-                android:id="@+id/textView2"
+                android:id="@+id/favorites_rest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textStyle="bold"
                 android:text="Restaurantes favoritos"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -158,7 +161,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/restaurantMenu"
+                android:id="@+id/restaurantButtonM"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Restaurantes"
@@ -169,7 +172,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/profileButton"
+                android:id="@+id/profButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="15dp"
@@ -177,7 +180,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.272"
-                app:layout_constraintStart_toEndOf="@+id/restaurantMenu"
+                app:layout_constraintStart_toEndOf="@+id/restaurantButtonM"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
