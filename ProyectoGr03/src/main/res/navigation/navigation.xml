@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_loginFragment_to_tipoUsuarioFragment"
             app:destination="@id/tipoUsuarioFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeClientFragment"
+            app:destination="@id/homeClientFragment" />
     </fragment>
     <fragment
         android:id="@+id/tipoUsuarioFragment"
@@ -75,4 +78,9 @@
         android:name="co.edu.udea.proyecto20231_gr03.NewFoodFragment"
         android:label="fragment_new_food"
         tools:layout="@layout/fragment_new_food" />
+    <fragment
+        android:id="@+id/homeClientFragment"
+        android:name="co.edu.udea.proyecto20231_gr03.HomeClientFragment"
+        android:label="fragment_home_client"
+        tools:layout="@layout/fragment_home_client" />
 </navigation>

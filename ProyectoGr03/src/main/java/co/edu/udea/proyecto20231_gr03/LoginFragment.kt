@@ -74,6 +74,7 @@ class LoginFragment : Fragment() {
             if (it.isSuccessful) {
                 val user: FirebaseUser? = auth.currentUser
                 Toast.makeText(context, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(R.id.action_loginFragment_to_homeClientFragment)
             } else {
                 Toast.makeText(
                     context,
