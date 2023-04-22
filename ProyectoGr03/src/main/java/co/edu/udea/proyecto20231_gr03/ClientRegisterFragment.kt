@@ -35,10 +35,10 @@ class ClientRegisterFragment : Fragment() {
 
     private fun setup(view: View) {
         auth = FirebaseAuth.getInstance()
-        etEmail = view.findViewById(R.id.restaurantEmailRegister)
-        etPassword = view.findViewById(R.id.restaurantPasswordRegister)
-        etPasswordConfirm = view.findViewById(R.id.restaurantPasswordConfirmRegister)
-        registerButton = view.findViewById(R.id.registerRestaurantButton)
+        etEmail = view.findViewById(R.id.mailClient)
+        etPassword = view.findViewById(R.id.passwordClient)
+        etPasswordConfirm = view.findViewById(R.id.confirmPasswordClient)
+        registerButton = view.findViewById(R.id.registerClientButton)
 
         registerButton.setOnClickListener {
             val email = etEmail.text.toString()
