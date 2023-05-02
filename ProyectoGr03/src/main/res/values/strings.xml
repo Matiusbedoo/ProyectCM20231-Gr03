@@ -18,7 +18,7 @@
     <string name="owner_phone">Teléfono Representante</string>
     <string name="next">Siguiente</string>
     <string name="password_hint">Contraseña</string>
-    <string name="repeat_password_hint">Repetir Contraseña</string>
+    <string name="repeat_password_hint">Confirmar Contraseña</string>
     <string name="client_name">Nombre</string>
     <string name="cellphone">Celular</string>
     <string name="client_register">Registro Cliente</string>

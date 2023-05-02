@@ -46,7 +46,8 @@
     <fragment
         android:id="@+id/clientRegisterFragment"
         android:name="co.edu.udea.proyecto20231_gr03.ClientRegisterFragment"
-        android:label="ClientRegisterFragment" />
+        android:label="ClientRegisterFragment"
+        tools:layout="@layout/fragment_client_register"/>
     <fragment
         android:id="@+id/foods"
         android:name="co.edu.udea.proyecto20231_gr03.FoodsFragment"
