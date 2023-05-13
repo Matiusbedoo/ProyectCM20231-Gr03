@@ -1,4 +1,8 @@
 package co.edu.udea.proyecto20231_gr03
 
-class CentralRestaurantApplication {
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class CentralRestaurantApplication: Application() {
 }
