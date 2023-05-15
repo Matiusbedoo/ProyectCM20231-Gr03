@@ -11,7 +11,8 @@ data class Restaurant(
     val name: String,
     val address: String,
     val phone: String,
-    val restaurantOwner: RestaurantOwner
+    val restaurantOwner: RestaurantOwner,
+    val menu : Menu
 ) {
 
     fun validate(): ValidationResult<Restaurant> {
