@@ -64,8 +64,8 @@ class LoginFragment : Fragment() {
 
         registerText.setOnClickListener {
             //Descomentar para mostrar navegación entre manejador de comidas y comentar el otro o viceversa
-            //findNavController().navigate(R.id.action_loginFragment_to_manageFood)
-            findNavController().navigate(R.id.action_loginFragment_to_tipoUsuarioFragment)
+            findNavController().navigate(R.id.action_loginFragment_to_manageFood)
+            //findNavController().navigate(R.id.action_loginFragment_to_tipoUsuarioFragment)
         }
     }
 

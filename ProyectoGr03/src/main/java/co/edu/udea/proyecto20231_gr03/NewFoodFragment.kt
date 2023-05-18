@@ -1,10 +1,21 @@
 package co.edu.udea.proyecto20231_gr03
 
+import android.app.Activity
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.ImageView
+import co.edu.udea.proyecto20231_gr03.databinding.FragmentNewFoodBinding
+import com.google.firebase.database.ktx.database
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -20,6 +31,12 @@ class NewFoodFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private val SELECTT_ACTIVITY = 1
+    private var imageUri: Uri? = null
+    private lateinit var bindingNewFood: FragmentNewFoodBinding
+    private val File = 1
+    private val database = Firebase.database
+    val myRef = database.getReference("user")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +50,9 @@ class NewFoodFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_new_food, container, false)
+        bindingNewFood = FragmentNewFoodBinding.inflate(inflater, container, false)
+        return bindingNewFood.root
     }
-
     companion object {
         /**
          * Use this factory method to create a new instance of
@@ -55,5 +71,48 @@ class NewFoodFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val imgBtn= view.findViewById<ImageView>(R.id.ImgFromGallery)
+        imgBtn.setOnClickListener{
+        ImageController.selectPhotoFromGallery(this, SELECTT_ACTIVITY )
+       }
+        val btnLoadImage =view.findViewById<Button>(R.id.registernewFood)
+        btnLoadImage.setOnClickListener {
+            fileUpLoad()
+        }
+    }
+
+    fun fileUpLoad() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "/"
+        startActivityForResult(intent, File)
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        when {
+            requestCode == SELECTT_ACTIVITY && resultCode == Activity.RESULT_OK -> {
+                imageUri = data!!.data
+                bindingNewFood.ImgFromGallery.setImageURI(imageUri)
+            }
+        }
+
+        if (requestCode == File){
+            if (resultCode == Activity.RESULT_OK){
+                val FileUri = data!!.data
+                val Folder: StorageReference = FirebaseStorage.getInstance().getReference().child("ImageFood")
+                val file_name: StorageReference = Folder.child("file" + FileUri!!.lastPathSegment)
+                file_name.putFile(FileUri).addOnSuccessListener { uri ->
+                    val hasMap = HashMap<String, String>()
+                    hasMap["link"] = java.lang.String.valueOf(uri)
+                    myRef.setValue(hasMap)
+                    Log.d("Mensaje", "Se sbio correctamente")
+                }
+            }
+        }
     }
 }

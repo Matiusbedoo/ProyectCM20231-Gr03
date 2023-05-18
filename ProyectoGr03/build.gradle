@@ -8,6 +8,14 @@ android {
     namespace 'co.edu.udea.proyecto20231_gr03'
     compileSdk 33
 
+    viewBinding{
+        enabled = true
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "co.edu.udea.proyecto20231_gr03"
         minSdk 24
@@ -47,4 +55,6 @@ dependencies {
     implementation platform('com.google.firebase:firebase-bom:31.5.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx:20.2.0'
+    implementation 'com.google.firebase:firebase-database-ktx:20.2.1'
 }

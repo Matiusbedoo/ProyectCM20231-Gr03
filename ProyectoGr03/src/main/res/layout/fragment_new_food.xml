@@ -18,7 +18,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/ImgFromGallery"
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_marginStart="135dp"
@@ -39,9 +39,10 @@
             android:layout_marginEnd="1dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView">
+            app:layout_constraintTop_toBottomOf="@+id/ImgFromGallery">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtNameFood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/nameFood" />
@@ -82,7 +83,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/registernewFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="107dp"
