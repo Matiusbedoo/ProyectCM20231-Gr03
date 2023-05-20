@@ -17,8 +17,8 @@
             android:id="@+id/action_loginFragment_to_homeClientFragment"
             app:destination="@id/homeClientFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_manageFood"
-            app:destination="@id/manageFood" />
+            android:id="@+id/action_loginFragment_to_homeRestaurantFragment"
+            app:destination="@id/homeRestaurantFragment" />
     </fragment>
     <fragment
         android:id="@+id/tipoUsuarioFragment"

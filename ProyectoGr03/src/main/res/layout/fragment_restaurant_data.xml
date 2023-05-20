@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestaurantDataFragment">
+    tools:context=".view.registro.RestaurantDataFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -39,13 +39,13 @@
             app:layout_constraintTop_toBottomOf="@id/titleText" />
 
         <EditText
-            android:id="@+id/restaurantTypeText"
+            android:id="@+id/mailText"
             style="@style/EditTextStyle"
             android:layout_width="match_parent"
             android:layout_margin="@dimen/internal_margin"
-            android:autofillHints=""
-            android:hint="@string/restaurant_type"
-            android:inputType="text"
+            android:autofillHints="emailAddress"
+            android:hint="@string/login_email_hint"
+            android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/restaurantNameText" />
@@ -60,7 +60,7 @@
             android:inputType="text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/restaurantTypeText" />
+            app:layout_constraintTop_toBottomOf="@id/mailText" />
 
         <EditText
             android:id="@+id/restaurantPhoneText"

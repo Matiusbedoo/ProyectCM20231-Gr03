@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RestaurantDataFragment">
+    tools:context=".view.registro.RestaurantDataFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -50,17 +50,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/clientName" />
 
-        <EditText
-            android:id="@+id/birthDateClient"
-            style="@style/EditTextStyle"
-            android:layout_width="match_parent"
-            android:layout_margin="@dimen/internal_margin"
-            android:autofillHints="postalAddress"
-            android:hint="@string/birthdate"
-            android:inputType="date"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/cellphoneClient" />
 
         <EditText
             android:id="@+id/mailClient"
@@ -72,7 +61,7 @@
             android:inputType="textEmailAddress"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/birthDateClient" />
+            app:layout_constraintTop_toBottomOf="@id/cellphoneClient" />
 
         <EditText
             android:id="@+id/passwordClient"

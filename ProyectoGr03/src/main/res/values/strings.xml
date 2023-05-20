@@ -41,4 +41,7 @@
     <string name="delete">Borrar</string>
     <string name="home">Home</string>
     <string name="register">Registrar</string>
+    <string name="wrong_login">Correo o contraseña incorrecta</string>
+    <string name="incomplete_fields">Ingresa todos los campos obligatorios</string>
+    <string name="greetings">"Hola de nuevo, %1$s"</string>
 </resources>
