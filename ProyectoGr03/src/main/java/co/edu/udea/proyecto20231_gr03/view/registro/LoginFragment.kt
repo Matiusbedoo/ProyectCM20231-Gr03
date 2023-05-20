@@ -9,6 +9,9 @@ import androidx.navigation.fragment.findNavController
 import co.edu.udea.proyecto20231_gr03.R
 import co.edu.udea.proyecto20231_gr03.data.service.UserRepository
 import co.edu.udea.proyecto20231_gr03.databinding.FragmentLoginBinding
+import co.edu.udea.proyecto20231_gr03.domain.User
+import co.edu.udea.proyecto20231_gr03.domain.UserType
+import co.edu.udea.proyecto20231_gr03.helpers.SerializeHelper
 import co.edu.udea.proyecto20231_gr03.helpers.UserAlertHelper
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -28,11 +31,11 @@ class LoginFragment : Fragment() {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        userRepository.getUserAuthenticated { user ->
-            if (user != null) {
-                findNavController().navigate(R.id.action_loginFragment_to_homeClientFragment)
-            }
-        }
+//        userRepository.getUserAuthenticated { user ->
+//            if (user != null) {
+//                ingress(user)
+//            }
+//        }
 
         binding.enterButton.setOnClickListener {
             logIn()
@@ -51,7 +54,7 @@ class LoginFragment : Fragment() {
         if (email.isNotEmpty() && password.isNotEmpty()) {
             userRepository.signIn(email, password) { user ->
                 if (user != null) {
-                    findNavController().navigate(R.id.action_loginFragment_to_homeClientFragment)
+                    ingress(user)
                 } else {
                     UserAlertHelper.showErrorDialog(
                         requireContext(),
@@ -65,5 +68,24 @@ class LoginFragment : Fragment() {
         }
     }
 
+    private fun ingress(user: User) {
+        val bundle = SerializeHelper.serializeInBundle(user)
+        when (user.type) {
+            UserType.Client -> {
+                findNavController().navigate(
+                    R.id.action_loginFragment_to_homeClientFragment,
+                    bundle
+                )
+            }
+
+            UserType.Restaurant -> {
+                findNavController().navigate(
+                    R.id.action_loginFragment_to_homeRestaurantFragment,
+                    bundle
+                )
+            }
+        }
+
+    }
 
 }

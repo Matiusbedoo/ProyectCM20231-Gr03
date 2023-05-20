@@ -14,6 +14,8 @@ data class Restaurant(
     val restaurantOwner: RestaurantOwner
 ) {
 
+    constructor() : this("", "Restaurante", "", "12312312", RestaurantOwner("", ""))
+
     fun validate(): ValidationResult<Restaurant> {
         return Validation {
             Restaurant::email required {

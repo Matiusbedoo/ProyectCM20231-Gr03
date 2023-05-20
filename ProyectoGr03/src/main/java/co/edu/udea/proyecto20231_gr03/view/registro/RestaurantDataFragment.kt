@@ -28,11 +28,11 @@ class RestaurantDataFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentRestaurantDataBinding.inflate(inflater, container, false)
         binding.nextRestaurantButton.setOnClickListener {
-            var restaurant = Restaurant(
+            val restaurant = Restaurant(
                 binding.mailText.text.toString(),
                 binding.restaurantNameText.text.toString(),
                 binding.restaurantAddressText.text.toString(),
@@ -61,9 +61,4 @@ class RestaurantDataFragment : Fragment() {
         return binding.root
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-
-    }
 }
