@@ -39,7 +39,7 @@ class RestaurantRegisterFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentRestaurantRegisterBinding.inflate(inflater, container, false)
 
         setup()
@@ -58,10 +58,7 @@ class RestaurantRegisterFragment : Fragment() {
             binding.registerRestaurantButton.setOnClickListener {
                 val email = binding.restaurantEmailRegister.text.toString()
                 val password = binding.restaurantPasswordRegister.text.toString()
-                var passwordConfirm = binding.restaurantPasswordConfirmRegister.text.toString()
-
-
-
+                val passwordConfirm = binding.restaurantPasswordConfirmRegister.text.toString()
 
                 if (email.isNotEmpty() && password.isNotEmpty() && passwordConfirm.isNotEmpty()) {
                     val user = User(email, UserType.Restaurant)
@@ -69,7 +66,8 @@ class RestaurantRegisterFragment : Fragment() {
                         userRepository.registerUser(user, password) {
                             if (it) {
                                 restaurantRepository.saveRestaurant(restaurant)
-                                findNavController().navigate(R.id.action_restaurantRegisterFragment_to_homeRestaurantFragment)
+                                val bundle = SerializeHelper.serializeInBundle(user)
+                                findNavController().navigate(R.id.action_restaurantRegisterFragment_to_homeRestaurantFragment, bundle)
                             } else {
                                 UserAlertHelper.showErrorDialog(
                                     requireContext(),

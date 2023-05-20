@@ -52,9 +52,13 @@
     </fragment>
     <fragment
         android:id="@+id/clientRegisterFragment"
-        android:name="co.edu.udea.proyecto20231_gr03.ClientRegisterFragment"
+        android:name="co.edu.udea.proyecto20231_gr03.view.registro.ClientRegisterFragment"
         android:label="ClientRegisterFragment"
-        tools:layout="@layout/fragment_client_register"/>
+        tools:layout="@layout/fragment_client_register">
+        <action
+            android:id="@+id/action_clientRegisterFragment_to_homeClientFragment"
+            app:destination="@id/homeClientFragment" />
+    </fragment>
     <fragment
         android:id="@+id/foods"
         android:name="co.edu.udea.proyecto20231_gr03.FoodsFragment"

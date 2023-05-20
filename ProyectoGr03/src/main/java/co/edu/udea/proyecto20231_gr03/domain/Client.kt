@@ -6,31 +6,24 @@ import io.konform.validation.ValidationResult
 import io.konform.validation.jsonschema.minLength
 import io.konform.validation.jsonschema.pattern
 
-data class Restaurant(
+data class Client(
     val email: String,
     val name: String,
-    val address: String,
     val phone: String,
-    val restaurantOwner: RestaurantOwner
 ) {
 
-    constructor() : this("", "Restaurante", "", "12312312", RestaurantOwner("", ""))
-
-    fun validate(): ValidationResult<Restaurant> {
+    constructor() : this("", "cliente", "3xxxxxxxx")
+    fun validate(): ValidationResult<Client> {
         return Validation {
-            Restaurant::email required {
+            Client::email required {
                 pattern(Patterns.EMAIL_ADDRESS.toString()) hint ("Correo inválido")
             }
-            Restaurant::name required {
+            Client::name required {
                 minLength(1) hint ("Ingrese un nombre")
             }
-            Restaurant::address required {
-                minLength(1) hint ("Ingrese un nombre")
-            }
-            Restaurant::phone required {
+            Client::phone required {
                 pattern("^\\d{10}") hint ("Teléfono inválido")
             }
-            Restaurant::restaurantOwner required { }
         }.validate(this)
     }
 }
