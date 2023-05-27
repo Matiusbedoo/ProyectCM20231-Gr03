@@ -67,7 +67,7 @@ class RestaurantRegisterFragment : Fragment() {
                             if (it) {
                                 restaurantRepository.saveRestaurant(restaurant)
                                 val bundle = SerializeHelper.serializeInBundle(user)
-                                findNavController().navigate(R.id.action_restaurantRegisterFragment_to_homeRestaurantFragment, bundle)
+                                findNavController().navigate(R.id.action_restaurantRegisterFragment_to_manageFood, bundle)
                             } else {
                                 UserAlertHelper.showErrorDialog(
                                     requireContext(),

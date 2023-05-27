@@ -1,42 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewFoodFragment" >
+    tools:context=".view.restaurant.NewFoodFragment" >
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="371dp"
-        android:layout_height="652dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="9dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        tools:ignore="MissingConstraints">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/default_margin">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/dataNewFood"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/ImgFromGallery"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginStart="135dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="136dp"
             android:src="@drawable/cargarfoto"
+            android:layout_margin="@dimen/internal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView3"
             app:srcCompat="@drawable/cargarfoto" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout"
-            android:layout_width="369dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="31dp"
-            android:layout_marginEnd="1dp"
+            android:layout_margin="@dimen/internal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/ImgFromGallery">
@@ -50,16 +51,15 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout2"
-            android:layout_width="369dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="1dp"
+            android:layout_margin="@dimen/internal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtPriceFood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/price" />
@@ -67,41 +67,29 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayout3"
-            android:layout_width="369dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="1dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="1dp"
+            android:layout_margin="@dimen/internal_margin"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout2">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/txtDescriptionFood"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/description" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button
-            android:id="@+id/registernewFood"
+            android:id="@+id/registerNewFood"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="107dp"
-            android:layout_marginEnd="29dp"
+            android:layout_margin="@dimen/internal_margin"
             android:text="@string/register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout3" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:textSize="20dp"
-        android:textColor="@color/black"
-        android:layout_marginTop="22dp"
-        android:text="@string/dataNewFood"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

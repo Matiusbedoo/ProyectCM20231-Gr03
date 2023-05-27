@@ -31,11 +31,11 @@ class LoginFragment : Fragment() {
 
         _binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-//        userRepository.getUserAuthenticated { user ->
-//            if (user != null) {
-//                ingress(user)
-//            }
-//        }
+        userRepository.getUserAuthenticated { user ->
+            if (user != null) {
+                ingress(user)
+            }
+        }
 
         binding.enterButton.setOnClickListener {
             logIn()
@@ -80,7 +80,7 @@ class LoginFragment : Fragment() {
 
             UserType.Restaurant -> {
                 findNavController().navigate(
-                    R.id.action_loginFragment_to_homeRestaurantFragment,
+                    R.id.action_loginFragment_to_manageFood,
                     bundle
                 )
             }
