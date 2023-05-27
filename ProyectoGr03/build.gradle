@@ -10,6 +10,14 @@ android {
     namespace 'co.edu.udea.proyecto20231_gr03'
     compileSdk 33
 
+    viewBinding{
+        enabled = true
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+
     defaultConfig {
         applicationId "co.edu.udea.proyecto20231_gr03"
         minSdk 24
@@ -32,10 +40,6 @@ android {
     }
     kotlinOptions {
         jvmTarget = '17'
-
-    }
-    buildFeatures{
-        viewBinding true
     }
 }
 
@@ -50,14 +54,17 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
+    implementation("io.konform:konform:0.4.0")
+    implementation 'com.google.code.gson:gson:2.9.0'
     implementation platform('com.google.firebase:firebase-bom:32.0.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx'
+    implementation 'com.google.firebase:firebase-storage-ktx'
+    implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.dagger:hilt-android:2.46'
     kapt 'com.google.dagger:hilt-compiler:2.46'
-    implementation("io.konform:konform:0.4.0")
-    implementation 'com.google.code.gson:gson:2.9.0'
+
 }
 
 // Allow references to generated code

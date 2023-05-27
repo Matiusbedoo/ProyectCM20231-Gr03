@@ -5,11 +5,18 @@
     android:id="@+id/navigation"
     app:startDestination="@id/loginFragment">
 
+    <action
+        android:id="@+id/action_home"
+        app:destination="@id/loginFragment" />
+    <action
+        android:id="@+id/action_restaurant_home"
+        app:destination="@id/manageFood" />
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="co.edu.udea.proyecto20231_gr03.view.registro.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/action_loginFragment_to_tipoUsuarioFragment"
             app:destination="@id/tipoUsuarioFragment" />
@@ -17,14 +24,14 @@
             android:id="@+id/action_loginFragment_to_homeClientFragment"
             app:destination="@id/homeClientFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_homeRestaurantFragment"
-            app:destination="@id/homeRestaurantFragment" />
+            android:id="@+id/action_loginFragment_to_manageFood"
+            app:destination="@id/manageFood" />
     </fragment>
     <fragment
         android:id="@+id/tipoUsuarioFragment"
         android:name="co.edu.udea.proyecto20231_gr03.TipoUsuarioFragment"
         android:label="fragment_tipo_usuario"
-        tools:layout="@layout/fragment_tipo_usuario" >
+        tools:layout="@layout/fragment_tipo_usuario">
         <action
             android:id="@+id/action_tipoUsuarioFragment_to_restaurantDataFragment"
             app:destination="@id/restaurantDataFragment" />
@@ -36,7 +43,7 @@
         android:id="@+id/restaurantDataFragment"
         android:name="co.edu.udea.proyecto20231_gr03.view.registro.RestaurantDataFragment"
         android:label="fragment_restaurant_data"
-        tools:layout="@layout/fragment_restaurant_data" >
+        tools:layout="@layout/fragment_restaurant_data">
         <action
             android:id="@+id/action_restaurantDataFragment_to_restaurantRegisterFragment"
             app:destination="@id/restaurantRegisterFragment" />
@@ -45,10 +52,10 @@
         android:id="@+id/restaurantRegisterFragment"
         android:name="co.edu.udea.proyecto20231_gr03.view.registro.RestaurantRegisterFragment"
         android:label="fragment_restaurant_register"
-        tools:layout="@layout/fragment_restaurant_register" >
+        tools:layout="@layout/fragment_restaurant_register">
         <action
-            android:id="@+id/action_restaurantRegisterFragment_to_homeRestaurantFragment"
-            app:destination="@id/homeRestaurantFragment" />
+            android:id="@+id/action_restaurantRegisterFragment_to_manageFood"
+            app:destination="@id/manageFood" />
     </fragment>
     <fragment
         android:id="@+id/clientRegisterFragment"
@@ -61,9 +68,9 @@
     </fragment>
     <fragment
         android:id="@+id/foods"
-        android:name="co.edu.udea.proyecto20231_gr03.FoodsFragment"
+        android:name="co.edu.udea.proyecto20231_gr03.view.restaurant.FoodsFragment"
         android:label="fragment_foods"
-        tools:layout="@layout/fragment_foods" >
+        tools:layout="@layout/fragment_foods">
         <action
             android:id="@+id/action_foods_to_manage"
             app:destination="@id/manage" />
@@ -78,16 +85,16 @@
         tools:layout="@layout/fragment_manage" />
     <fragment
         android:id="@+id/manageFood"
-        android:name="co.edu.udea.proyecto20231_gr03.ManageFoodFragment"
+        android:name="co.edu.udea.proyecto20231_gr03.view.restaurant.ManageFoodFragment"
         android:label="fragment_manage_food"
-        tools:layout="@layout/fragment_manage_food" >
+        tools:layout="@layout/fragment_manage_food">
         <action
             android:id="@+id/action_manageFood_to_foods"
             app:destination="@id/foods" />
     </fragment>
     <fragment
         android:id="@+id/newFood"
-        android:name="co.edu.udea.proyecto20231_gr03.NewFoodFragment"
+        android:name="co.edu.udea.proyecto20231_gr03.view.restaurant.NewFoodFragment"
         android:label="fragment_new_food"
         tools:layout="@layout/fragment_new_food" />
     <fragment
@@ -95,9 +102,4 @@
         android:name="co.edu.udea.proyecto20231_gr03.HomeClientFragment"
         android:label="fragment_home_client"
         tools:layout="@layout/fragment_home_client" />
-    <fragment
-        android:id="@+id/homeRestaurantFragment"
-        android:name="co.edu.udea.proyecto20231_gr03.HomeRestaurantFragment"
-        android:label="fragment_home_restaurant"
-        tools:layout="@layout/fragment_home_restaurant" />
 </navigation>
